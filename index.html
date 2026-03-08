@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home & Hound Help | Noblesville, IN</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171a21;
+      --panel-2: #1e2330;
+      --text: #f5f7fb;
+      --muted: #b8c0d1;
+      --line: rgba(255,255,255,0.1);
+      --accent: #f3f4f6;
+      --accent-text: #111827;
+      --max: 1120px;
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #111318 0%, #0b0d11 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .hero {
+      padding: 96px 0 80px;
+      border-bottom: 1px solid var(--line);
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.07), transparent 35%);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .brandmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .brandmark-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .brandmark-text strong {
+      display: block;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
+
+    .brandmark-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      max-width: 850px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 16px;
+      font-weight: bold;
+      border: 1px solid var(--line);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-text);
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .brand-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 32px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .steps .step-number {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--accent-text);
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .contact-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 34px;
+    }
+
+    .contact-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-copy {
+      max-width: 900px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="topbar">
+        <div>Noblesville, IN</div>
+        <div class="topbar-links">
+          <a href="tel:4072056816">407-205-6816</a>
+          <a href="mailto:homeandhoundhelp@gmail.com">homeandhoundhelp@gmail.com</a>
+        </div>
+      </div>
+      <div class="brandmark">
+        <div class="brandmark-icon">🐾</div>
+        <div class="brandmark-text">
+          <strong>Home &amp; Hound Help</strong>
+          <span>Walks • Setup • Support</span>
+        </div>
+      </div>
+      <div class="badge">Reliable local help for pets and home tech</div>
+      <div class="hero-copy">
+        <h1>Dependable dog walks and stress-free home tech help for Noblesville.</h1>
+        <p class="lead">Home &amp; Hound Help makes everyday life easier with reliable dog walking, TV and streaming setup, simple electronics installs, and patient phone or computer support.</p>
+      </div>
+      <div class="button-row">
+        <a href="#contact" class="btn btn-primary">Book a Service</a>
+        <a href="#services" class="btn btn-secondary">View Services</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="brand-box">
+          <p class="eyebrow">Brand</p>
+          <h2>Home &amp; Hound Help</h2>
+          <p class="lead">A local service brand focused on two things people constantly need: trustworthy pet care and simple, stress-free help with everyday technology.</p>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Slogan</h3>
+              <p>Walks, wires, and worry-free help.</p>
+            </div>
+            <div class="card">
+              <h3>Best fit clients</h3>
+              <p>Busy workers, pet owners, older adults, and anyone who wants patient home tech support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="lead">Clear, simple services for everyday needs around the house and neighborhood.</p>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Dog Walking</h3>
+            <p class="muted">Reliable walks for busy owners, quick potty breaks, and consistent care for dogs that need routine.</p>
+            <ul>
+              <li>15, 30, or 60 minute visits</li>
+              <li>Photo and text updates</li>
+              <li>Flexible weekday scheduling</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Home Electronics Setup</h3>
+            <p class="muted">Help with TVs, streaming devices, soundbars, smart plugs, printers, Wi-Fi basics, and simple home tech installs.</p>
+            <ul>
+              <li>TV and streaming setup</li>
+              <li>Printer and Wi-Fi help</li>
+              <li>Smart home basics</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Phone &amp; Computer Help</h3>
+            <p class="muted">Patient, beginner-friendly support for phones, laptops, desktops, app setup, updates, and common troubleshooting.</p>
+            <ul>
+              <li>Device setup</li>
+              <li>Password and app guidance</li>
+              <li>Basic troubleshooting</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Starter Pricing</h2>
+        <p class="lead">Simple pricing builds trust. You can always raise rates later once reviews and demand grow.</p>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Dog Walking</h3>
+            <ul>
+              <li>15 min walk — $15</li>
+              <li>30 min walk — $20</li>
+              <li>60 min walk — $35</li>
+              <li>Extra dog — +$5</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Home Tech Visits</h3>
+            <ul>
+              <li>Base visit / diagnosis — $30</li>
+              <li>TV or streaming setup — $40</li>
+              <li>Printer / Wi-Fi basics — $35</li>
+              <li>Simple device setup — $25+</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Phone &amp; Computer Help</h3>
+            <ul>
+              <li>Quick help session — $25</li>
+              <li>1 hour support visit — $40</li>
+              <li>Custom device setup — quoted</li>
+              <li>Remote help later — optional</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div>
+            <h2>Why people choose this service</h2>
+            <p class="lead">The goal is simple: be dependable, easy to work with, and helpful without overcomplicating anything. Whether it is your dog, your TV, or your phone, you should feel like the process is stress-free.</p>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Friendly and patient</h3>
+              <p class="muted">Especially helpful for people who want simple explanations, not tech jargon.</p>
+            </div>
+            <div class="card">
+              <h3>Local and flexible</h3>
+              <p class="muted">Great for nearby clients who need a trustworthy extra hand.</p>
+            </div>
+            <div class="card">
+              <h3>Practical support</h3>
+              <p class="muted">Focused on real everyday needs instead of trying to sell unnecessary extras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps">
+      <div class="container">
+        <h2>How it works</h2>
+        <p class="lead">A simple booking flow keeps things easy for you and your clients.</p>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="step-number">1</div>
+            <p>Send a message with what you need and your general location.</p>
+          </div>
+          <div class="card">
+            <div class="step-number">2</div>
+            <p>Get a simple quote and time window.</p>
+          </div>
+          <div class="card">
+            <div class="step-number">3</div>
+            <p>Book the visit and get the help you need without the headache.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Client Reviews</h2>
+        <p class="lead">Social proof helps new clients trust you faster.</p>
+        <div class="grid grid-3">
+          <div class="card">
+            <p>“Super easy to work with and very patient. My TV, Wi-Fi, and streaming apps were all working before he left.”</p>
+            <p class="muted">— Sarah M.</p>
+          </div>
+          <div class="card">
+            <p>“Great with my dog and always on time. The update photos gave me peace of mind while I was at work.”</p>
+            <p class="muted">— Daniel R.</p>
+          </div>
+          <div class="card">
+            <p>“Helped me with my phone and laptop without making me feel dumb. That alone was worth it.”</p>
+            <p class="muted">— Linda T.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>FAQ</h2>
+        <p class="lead">Answering common questions upfront makes people more likely to book.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>What areas do you serve?</h3>
+            <p class="muted">I serve Noblesville, IN and nearby areas within about 30 minutes, depending on scheduling and availability.</p>
+          </div>
+          <div class="card">
+            <h3>What kind of electronics help do you offer?</h3>
+            <p class="muted">Simple everyday setup and troubleshooting for TVs, streaming devices, printers, Wi-Fi basics, phones, and computers.</p>
+          </div>
+          <div class="card">
+            <h3>Do you offer same-day service?</h3>
+            <p class="muted">Offer same-day help when available, or keep it by appointment only.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Contact</h2>
+          <p class="lead">Ready to book or ask a question? Reach out with your service need, location, and preferred day.</p>
+          <div class="grid grid-2">
+            <div class="contact-item">
+              <strong>Phone</strong>
+              <p><a href="tel:4072056816">407-205-6816</a></p>
+            </div>
+            <div class="contact-item">
+              <strong>Email</strong>
+              <p><a href="mailto:davidpreble1996@gmail.com">davidpreble1996@gmail.com</a></p>
+            </div>
+          </div>
+          <p class="muted">Service area: Noblesville, IN and nearby areas.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Home &amp; Hound Help • Noblesville, IN • Walks, wires, and worry-free help.
+    </div>
+  </footer>
+</body>
+</html>
